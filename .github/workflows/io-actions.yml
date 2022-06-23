@@ -31,7 +31,7 @@ jobs:
               unzip -o io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}.zip
             fi
             chmod +x io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}/io  
-            io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}/io --stage io
+            io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}/io --stage io --stage execution --stage workflow
       env:
         SYNOPSYS_IO_Workflow_Engine_Version : 2022.4.1
         SYNOPSYS_IO_io_server_token: ${{secrets.IO_SERVER_TOKEN}}
@@ -42,16 +42,16 @@ jobs:
         SYNOPSYS_IO_polaris_authtoken:  ${{secrets.POLARIS_ACCESS_TOKEN}}
         SYNOPSYS_IO_polaris_projectName: "insecure-bank"
         SYNOPSYS_IO_sigma_downloadurl: ${{secrets.SIGMA_DOWNLOAD_URL}}
-        SYNOPSYS_IO_Jira_HostUrl: <jira_host_url>
-        SYNOPSYS_IO_Jira_Username: <jira_user_name>
+        SYNOPSYS_IO_Jira_HostUrl: ${{secrets.JIRA_URL}}
+        SYNOPSYS_IO_Jira_Username: "iouser"
         SYNOPSYS_IO_Jira_AuthToken: ${{secrets.JIRA_AUTH_TOKEN}}
-        SYNOPSYS_IO_Jira_IssueType: <jira_issue_type>
-        SYNOPSYS_IO_Jira_Project_Key: <jira_project_key>
-        SYNOPSYS_IO_Jira_Assignee: <jira_assignee>
+        SYNOPSYS_IO_Jira_IssueType: "Bug"
+        SYNOPSYS_IO_Jira_Project_Key: "GIT"
+        SYNOPSYS_IO_Jira_Assignee: "iouser@synopsys.com"
         SYNOPSYS_IO_slack_channelIdentifier: "C03ENPM4C90"
         SYNOPSYS_IO_slack_bearerToken: ${{secrets.SLACK_TOKEN}}
-        SYNOPSYS_IO_jira_issuesquery: <jira_issues_query>
-        SYNOPSYS_IO_jira_project_name: <jira_projet_name>
+        SYNOPSYS_IO_jira_issuesquery: "resolution=Unresolved AND labels in (Security, Defect)"
+        SYNOPSYS_IO_jira_project_name: "Github-Actions-IO"
         SYNOPSYS_IO_scm_type: "github"
         SYNOPSYS_IO_scm_owner: "io-poc"
         SYNOPSYS_IO_scm_repository_name: "poc-90"

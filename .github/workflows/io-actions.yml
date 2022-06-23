@@ -41,7 +41,6 @@ jobs:
         SYNOPSYS_IO_polaris_instanceurl: ${{secrets.POLARIS_SERVER_URL}}
         SYNOPSYS_IO_polaris_authtoken:  ${{secrets.POLARIS_ACCESS_TOKEN}}
         SYNOPSYS_IO_polaris_projectName: "insecure-bank-gha"
-        SYNOPSYS_IO_sigma_downloadurl: ${{secrets.SIGMA_DOWNLOAD_URL}}
         SYNOPSYS_IO_Jira_HostUrl: ${{secrets.JIRA_URL}}
         SYNOPSYS_IO_Jira_Username: "iouser"
         SYNOPSYS_IO_Jira_AuthToken: ${{secrets.JIRA_AUTH_TOKEN}}

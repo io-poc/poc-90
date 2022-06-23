@@ -28,7 +28,7 @@ jobs:
       id: prescription
       uses: synopsys-sig/intelligent-security-scan@2022.4.1
       env:
-        persona: developer
+        persona: devsecops
         release_type: major
       with:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}

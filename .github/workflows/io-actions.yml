@@ -29,6 +29,7 @@ jobs:
             if [ ! -d 'io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}' ]; then
               wget "${{secrets.IO_CLIENT_URL}}/download/io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}.zip"
               unzip -o io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}.zip
+              chmod a+x ./blackduck.sh
             fi
             chmod +x io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}/io  
             io_client-${{secrets.IO_CLIENT_VERSION}}-${{secrets.RUNNER_OS_TYPE}}/io --stage io --stage execution --stage workflow --adapters adapters.json

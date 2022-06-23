@@ -1,0 +1,22 @@
+[
+    {
+        "Name": "Blackduck-SE",
+        "Type": "SimpleExecutable",
+        "Stage": "execution",
+        "Config": {
+            "command": [
+                "./blackduck.sh"
+            ],
+            "Conditions":["Prescription.Security.Activities.Sca.Enabled"],
+            "Require": [
+                "Blackduck.InstanceUrl",
+                "Blackduck.AuthToken",
+                "Blackduck.ProjectName",
+                "Blackduck.ProjectVersion"
+            ],
+            "Success": {
+                "Blackduck.ScanSuccessful": true
+            }
+        }
+    }
+]

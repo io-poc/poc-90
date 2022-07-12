@@ -9,7 +9,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: self-hosted
+    runs-on: io-linux
     
     steps:
     - name: Checkout repository

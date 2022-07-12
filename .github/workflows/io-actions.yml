@@ -3,8 +3,6 @@ name: "Synopsys Intelligent Security Scan"
 on:
   push:
     branches: [ main ]
-  # pull_request:
-    # branches: [ main ]
 
 jobs:
   analyze:
@@ -57,10 +55,13 @@ jobs:
         SYNOPSYS_IO_scm_repository_name: "poc-90"
         SYNOPSYS_IO_scm_repository_branch_name: "main"
         SYNOPSYS_IO_github_token: ${{secrets.GH_ACCESS_TOKEN}}
-        SYNOPSYS_IO_github_username: "neil.pathare@outlook.com"
+        SYNOPSYS_IO_github_username: ${{secrets.GH_USERNAME}}
         SYNOPSYS_IO_github_apiUrl: "https://api.github.com/repos"
         SYNOPSYS_IO_project_release_type: "major"
         SYNOPSYS_IO_Blackduck_AuthToken: ${{secrets.BLACKDUCK_TOKEN}}
         SYNOPSYS_IO_Blackduck_ProjectName: "insecure-bank-gha"
         SYNOPSYS_IO_Blackduck_InstanceUrl: ${{secrets.BLACKDUCK_URL}}
         SYNOPSYS_IO_Blackduck_ProjectVersion: "1.0"
+        SYNOPSYS_IO_codedx_instanceUrl: ${{secrets.CODEDX_URL}}
+        SYNOPSYS_IO_codedx_apiKey: ${{secrets.CODEDX_ACCESS_TOKEN}}
+        SYNOPSYS_IO_codedx_projectId: 20

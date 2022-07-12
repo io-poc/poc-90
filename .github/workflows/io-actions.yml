@@ -41,15 +41,15 @@ jobs:
         SYNOPSYS_IO_polaris_authtoken:  ${{secrets.POLARIS_ACCESS_TOKEN}}
         SYNOPSYS_IO_polaris_projectName: "insecure-bank"
         SYNOPSYS_IO_Jira_HostUrl: ${{secrets.JIRA_URL}}
-        SYNOPSYS_IO_Jira_Username: "iouser"
+        SYNOPSYS_IO_Jira_Username: "Administrator"
         SYNOPSYS_IO_Jira_AuthToken: ${{secrets.JIRA_AUTH_TOKEN}}
         SYNOPSYS_IO_Jira_IssueType: "Bug"
-        SYNOPSYS_IO_Jira_Project_Key: "GIT"
-        SYNOPSYS_IO_Jira_Assignee: "iouser@synopsys.com"
+        SYNOPSYS_IO_Jira_Project_Key: "INSEC"
+        SYNOPSYS_IO_Jira_Assignee: "Administrator"
         SYNOPSYS_IO_slack_channelIdentifier: "C03ENPM4C90"
         SYNOPSYS_IO_slack_bearerToken: ${{secrets.SLACK_TOKEN}}
-        SYNOPSYS_IO_jira_issuesquery: "resolution=Unresolved AND labels in (Security, Defect)"
-        SYNOPSYS_IO_jira_project_name: "Github-Actions-IO"
+        SYNOPSYS_IO_jira_issuesquery: "resolution=Unresolved"
+        SYNOPSYS_IO_jira_project_name: "INSEC"
         SYNOPSYS_IO_scm_type: "github"
         SYNOPSYS_IO_scm_owner: "io-poc"
         SYNOPSYS_IO_scm_repository_name: "poc-90"
